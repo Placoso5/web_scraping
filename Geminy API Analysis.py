@@ -11,7 +11,7 @@ file_object.close()
 client = genai.Client(api_key=key)
 
 #Cargamos el csv original como dataframe
-df = pd.read_csv("analysis_summary.csv", sep = ",")
+df = pd.read_csv("scraped_data.csv", sep = ",")
 
 #Definimos listas para poner lo que vayamos sacando
 summary_list = []
@@ -48,5 +48,5 @@ df['Topics'] = topics_list
 # Fill missing values por si acaso
 df.fillna("NA") 
 
-df.to_csv('finished_sumary.csv', index=True)
+df.to_csv('analysis_summary.csv', index=True)
 
